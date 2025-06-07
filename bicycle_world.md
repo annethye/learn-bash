@@ -25,8 +25,7 @@ brands.txt  freight  mountain  racing
 $ cd freight/
 ```
 
-### 4.
-List the files and directories in the working directory.
+### 4. List the files and directories in the working directory.
 ```
 $ ls
 messenger  porteur
@@ -37,8 +36,7 @@ messenger  porteur
 $ cd porteur/
 ```
 
-### 6. Change directories up two levels to the bicycle-world-ii/ directory.
-List the files and directories in the bicycle-world-ii/ directory.
+### 6. Change directories up two levels to the bicycle-world-ii/ directory and list the files and directories
 ```
 $ cd ../..
 $ ls
@@ -76,7 +74,7 @@ $ mkdir safety
 $ cd ../..
 ```
 
-### 13. List the contents of lsthe bicycle-world-ii/ directory.
+### 13. List the contents of the bicycle-world-ii/ directory.
 ```
 $ ls
 brands.txt  freight  mountain  racing
