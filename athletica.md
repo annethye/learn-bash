@@ -1,8 +1,5 @@
 # Athletica
-
 In this project, you’ll use the commands you just learned to redirect files in Athletica, a sporting events directory.
-
-If you get stuck during this project or would like to see an experienced developer work through it, click “Get Unstuck“ to see a project walkthrough video.
 
 
 ### 1. Print the working directory.
@@ -147,16 +144,113 @@ tennis racket
 
 ### 12. Use the uniq command to filter out adjacent, duplicate lines in equipment.txt.
 ```
+$ sort equipment.txt | uniq 
+baseball
+baseball bat
+cleats
+cricket bat
+football
+goggles
+helmet
+hockey puck
+hockey stick
+lacrosse ball
+lacrosse stick
+shinguards
+shuttlecock
+skates
+sneakers
+swimming cap
+tennis ball
+tennis racket
 ```
 
 ### 13. Use the grep command to search roster.txt for players from Japan.
 ```
+$ grep Japan roster.txt
+Yuki Hayashi, Swimming: Japan
+Misako Sato, Gymnastics: Japan
+Takumi Fujiwara, Basketball: Japan
+Toshi Ogawa, Badminton: Japan
 ```
 
-### 14. Use the grep command to search for the string ‘player’ in the current directory (.), and output filenames and lines for matched results.
+### 14. Use the grep command to search for the string ‘player’ in the current directory, and output filenames and lines for matched results.
 ```
+$ grep -R player .
+./basketball.txt:Basketball is a sport played by two teams of five players on a rectangular court. Src: Wikipedia
+./cricket.txt:Cricket is a bat-and-ball game played between two teams of 11 players each on a field at the centre of which is a rectangular 22-yard-long pitch. Src: Wikipedia
+./hockey.txt:Basketball is a sport played by two teams of five players on a rectangular court. Src: Wikipedia
+./tennis.txt:Tennis is a racket sport that can be played individually against a single opponent (singles) or between two teams of two players each (doubles). Src: Wikipedia
 ```
 
 ### 15. Use cat to view the contents of games.txt. Then, use sed to replace all instances of the word ‘loss’ with ‘win’ in games.txt.
 ```
+$  cat games.txt
+Australia vs United Kingdom
+Australia: loss
+
+United States vs South Africa
+United States: loss
+
+Mexico vs Colombia
+Colombia: loss
+
+Brazil vs Argentina
+Brazil: loss
+
+Kenya vs Ghana
+Kenya: loss
+
+Jordan vs Morocco
+Morocco: loss
+
+Malaysia vs Singapore
+Singapore: loss
+
+India vs China
+India: loss
+
+Pakistan vs Uzbekistan
+Uzbekistan: loss
+
+Greece vs Turkey
+Greece: loss
+
+France vs Spain
+France: loss
+```
+```
+$ sed 's/loss/win/g' games.txt
+Australia vs United Kingdom
+Australia: win
+
+United States vs South Africa
+United States: win
+
+Mexico vs Colombia
+Colombia: win
+
+Brazil vs Argentina
+Brazil: win
+
+Kenya vs Ghana
+Kenya: win
+
+Jordan vs Morocco
+Morocco: win
+
+Malaysia vs Singapore
+Singapore: win
+
+India vs China
+India: win
+
+Pakistan vs Uzbekistan
+Uzbekistan: win
+
+Greece vs Turkey
+Greece: win
+
+France vs Spain
+France: win
 ```
