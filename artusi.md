@@ -34,7 +34,7 @@ drwxr-xr-x 3 ccuser ccuser 18 Mar  5  2016 sculpting
 ```
 
 ### 5. Change directories to the pencils/ directory. 
-The relative path of the pencils directory is drawing/pencils/.
+The relative path of the pencils directory is drawing/pencils/
 ```
 $ cd drawing/pencils/
 ```
@@ -69,7 +69,7 @@ Source: Wikipedia
 ```
 
 ### 8. Change directories into the charcoal/ directory. 
-The relative path to the charcoal directory is ../charcoal/.
+The relative path to the charcoal directory is ../charcoal/
 ```
 $ cd ../charcoal/
 ```
@@ -99,13 +99,13 @@ Source: Wiki
 ```
 
 ### 10. Copy the file vine.txt to pencils/color.txt. 
-The relative path of the latter is ../pencils/color.txt.
+The relative path of the latter is ../pencils/color.txt
 ```
 $ cp vine.txt ../pencils/color.txt
 ```
 
 ### 11. From the charcoal/ directory, change directories to the painting/ directory. 
-The relative path is ../../painting/.
+The relative path is ../../painting/
 ```
 $ cd ../../painting/
 ```
@@ -144,7 +144,8 @@ drwxr-xr-x 4 ccuser ccuser  34 Mar  5  2016 ..
 ```
 
 ### 16. Copy the files starting with the letter f from the brushes/ directory to the paint/ directory. 
-The path to the paint/ directory is ../paint/.
+The path to the paint/ directory is ../paint/
+
 Without changing directories, list the files and directories of the paint/ directory.
 ```
 $ cp f*.txt ../paint/
@@ -175,7 +176,7 @@ airdry.txt
 ```
 
 ### 20. Move airdry.txt into the ceramic/ directory. 
-The relative path to this directory is ../ceramic/.
+The relative path to this directory is ../ceramic/
 ```
 $ mv airdry.txt ../ceramic/
 ```
@@ -207,7 +208,7 @@ $ pwd
 /home/ccuser/workspace/artusi/sculpting/clay
 ```
 
-### 25. Take a look at the contents of the current directory clay/. Delete the dough/ directory.
+### 25. Delete the dough/ directory.
 ```
 $ ls
 ceramic  dough  polymer
@@ -215,7 +216,9 @@ $ rm -rf dough
 $ ls
 ceramic  polymer
 ```
-To remove a directory, we should use the rm command with the option -r, which deletes the directory and all its contents (even directories nested inside). The -f option will delete forcibly without individually confirming each piece of content inside the directory.
+rm -r deletes the directory and all its contents (even directories nested inside). 
+
+rm -rf will forcibly delete everything without individually confirming each piece of content inside the directory.
 
 ### 26. Change directories two levels up back to the artusi/ directory. Print the working directory.
 ```
