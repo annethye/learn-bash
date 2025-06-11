@@ -12,48 +12,53 @@ $ pwd
 $ nano hello.txt
 ```
 
-### 3. Save the string, “Hello, I am nano” in hello.txt.
+### 3. Save the string, “Hello, I am nano” in hello.txt
+```
+“Hello, I am nano”
+```
+Remember to do the following:  
+<kbd>Ctrl</kbd> + <kbd>o</kbd> to save file  
+<kbd>Enter</kbd> to confirm  
+<kbd>Ctrl</kbd> + <kbd>x</kbd> to exit nano  
 
-Save the file, exit nano
-```
-ctrl + O
-enter
-ctrl + x
-```
 and clear the terminal.
 ```
 $ clear
 ```
+
 ### 4. Use nano to open the bash profile.
 ```
 $ nano ~/.bash_profile
 ```
 
-### 5. In the bash profile, add a greeting with the word “Hello” using the echo command. Save the file, exit nano, and clear the terminal.
+### 5. In the bash profile, add a greeting with the word “Hello”
 ```
 $ nano ~/.bash_profile
 ```
 ```
-$ clear
+echo "Hello Sunshine!"
 ```
+Remember to save file, exit nano and clear the terminal.
 
-### 6. Use the source command to make the greeting available in the current session.
-
+### 6. Make the greeting available in the current session.
 You should see the greeting you created.
 ```
 $ source ~/.bash_profile
 Hello Sunshine!
 ```
 
-### 7. Open the bash profile, and create two aliases. The first alias should be p for the pwd command and ll for the ls -la command.
-
-Save the file, exit nano, and clear the terminal.
+### 7. Create two aliases. The first alias should be p for the pwd command and ll for the ls -la command.
 ```
-alias p='pwd'
-alias ll='ls -la'
+$ nano ~/.bash_profile
 ```
+```
+echo "Hello Sunshine!"
+alias p="pwd"
+alias ll="ls -la"
+```
+Remember to save file, exit nano and clear the terminal.
 
-### 8. Use the source command to make the aliases available in the current session.
+### 8. Make the aliases available in the current session.
 ```
 $ source ~/.bash_profile
 Hello Sunshine!
@@ -77,42 +82,101 @@ drwxr-xr-x 1 ccuser ccuser  22 Jun 14 22:16 ..
 -rw-r--r-- 1 ccuser ccuser   0 Jun 14 16:12 sweaters.txt
 ```
 
-### 10. Open the bash profile and create and export the USER environment variable, setting it equal to your name.
-
-Save the file, exit nano, and clear the terminal.
+### 10. Create and export the USER environment variable, setting it equal to your name.
+```
+$ nano ~/.bash_profile
 ```
 ```
-
-### 11. Use the source command to make the aliases available in the current session.
+echo "Hello Sunshine!"
+alias p="pwd"
+alias ll="ls -la"
+export USER="Me Myself and I"
 ```
+Remember to save file, exit nano and clear the terminal.
+### 11. Make the aliases available in the current session.
+```
+$ source ~/.bash_profile
+Hello Sunshine!
 ```
 
 ### 12. Echo the USER variable.
 ```
+$ echo $USER
+Me Myself and I
 ```
 
-### 13. Open the bash profile and create and export the PS1 environment variable, setting it equal to ">> ".
+### 13. Change the PS1 environment variable, setting it equal to ">> ".
+```
+$ nano ~/.bash_profile
+```
+```
+echo "Hello Sunshine!"
+alias p="pwd"
+alias ll="ls -la"
+export USER="Me Myself and I"
+export PS1=">> "
+```
+Remember to save file, exit nano and clear the terminal.
 
-Save the file, exit nano, and clear the terminal.
+### 14. Make the prompt available in the current session.
 ```
-```
-
-### 14. Use the source command to make the prompt available in the current session.
-```
+$ source ~/.bash_profile
+Hello Sunshine!
+>> 
 ```
 
 ### 15. Test out the prompt by typing the two aliases you created earlier.
 ```
+>> p
+/home/ccuser/workspace/clothing
+>> ll
+total 4
+drwxr-xr-x 2 ccuser ccuser 152 Jun 11 10:49 .
+drwxr-xr-x 1 ccuser ccuser  22 Jun 11 10:42 ..
+-rw-r--r-- 1 ccuser ccuser   0 Jun 11 10:42 dresses.txt
+-rw-r--r-- 1 ccuser ccuser  19 Jun 11 10:49 hello.txt
+-rw-r--r-- 1 ccuser ccuser   0 Jun 11 10:42 jackets.txt
+-rw-r--r-- 1 ccuser ccuser   0 Jun 11 10:42 pants.txt
+-rw-r--r-- 1 ccuser ccuser   0 Jun 11 10:42 scarves.txt
+-rw-r--r-- 1 ccuser ccuser   0 Jun 11 10:42 shirts.txt
+-rw-r--r-- 1 ccuser ccuser   0 Jun 11 10:42 socks.txt
+-rw-r--r-- 1 ccuser ccuser   0 Jun 11 10:42 sweaters.txt
 ```
 
 ### 16. Echo the HOME variable.
 ```
+>> echo $HOME
+/home/ccuser
 ```
 
 ### 17. Echo the PATH variable.
 ```
+>> echo $PATH
+/home/ccuser/.bin:/home/ccuser/node_modules/.bin:/home/ccuser/.gem/ruby/2.3.0/bin:/home/ccuser/.composer/vendor/bin:/home/ccuser/.bin:/home/ccuser/node_modules/.bin:/home/ccuser/.gem/ruby/2.3.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ```
 
 ### 18. Return a list of environment variables.
 ```
+>> env
+HOSTNAME=3fce011f59b0
+GEM_HOME=/home/ccuser/.gem/ruby/2.3.0
+TERM=xterm
+USER=Me Myself and I
+EXPIRES_AT=1749642008
+NLTK_DATA=/home/ccuser/.nltk_data
+PATH=/home/ccuser/.bin:/home/ccuser/node_modules/.bin:/home/ccuser/.gem/ruby/2.3.0/bin:/home/ccuser/.composer/vendor/bin:/home/ccuser/.bin:/home/ccuser/node_modules/.bin:/home/ccuser/.gem/ruby/2.3.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+CODEX_RUNNER_PATH=/var/codecademy/codex/runners
+PWD=/home/ccuser/workspace/clothing
+MPLBACKEND=agg
+LANG=en_US.UTF-8
+SESSION_ID=51dcfcc7-4d25-41c0-ba07-e3a523b5c8b8
+TZ=Etc/UTC
+PS1=>>
+SHLVL=1
+HOME=/home/ccuser
+LOG_LEVEL=2
+WORKSPACE_SERVICE_HOST=https://workspace.production-eks.codecademy.com
+EIN_IMAGE=default
+PYTHONPATH=/var/codecademy/runner_contexts/python:
+_=/usr/bin/env
 ```
