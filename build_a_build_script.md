@@ -21,7 +21,7 @@ echo "Welcome to the build script"
 ```
 
 Terminal test:
-```
+```bash
 $ ./script.sh
 Welcome to the build script
 ```
@@ -39,7 +39,7 @@ echo $firstline
 ```
 
 Terminal test:
-```
+```bash
 $ ./script.sh
 Welcome to the build script
 ## 11.2.3
@@ -64,7 +64,7 @@ echo "You are building version: $version"
 ```
 
 Terminal Test:
-```
+```bash
 $ ./script.sh
 Welcome to the build script
 You are building version: 11.2.3
@@ -76,7 +76,7 @@ You are building version: 11.2.3
 Let's give the user a chance to exit the script if they need to make a change to the version.
 Ask the user to enter 1 (for yes) to continue and 0 (for no) to exit and assign their response to the variable versioncontinue.
 
-```
+```bash
 echo "Do you wish to continue? Yes (Enter 1) / No (Enter 0)"
 read versioncontinue
 ```
@@ -95,7 +95,7 @@ fi
 ```
 
 Terminal Test:
-```
+```bash
 $ ./script.sh
 Welcome to the build script
 You are building version: 11.2.3
@@ -129,7 +129,7 @@ fi
 ```
 
 Terminal Test:
-```
+```bash
 Welcome to the build script
 You are building version: 11.2.3
 Do you wish to continue? Yes (Enter 1) / No (Enter 0)
@@ -167,7 +167,7 @@ fi
 ```
 
 Terminal Test:
-```
+```bash
 $ ./script.sh
 Welcome to the build script
 You are building version: 11.2.3
@@ -207,7 +207,7 @@ fi
 ```
 
 Terminal Test:
-```
+```bash
 $ ls build/
 $ ./script.sh
 Welcome to the build script
@@ -251,7 +251,7 @@ Be sure to reference the version in your message.
 ```
 
 Terminal Test:
-```
+```bash
 $ ./script.sh
 Welcome to the build script
 You are building version: 11.2.3

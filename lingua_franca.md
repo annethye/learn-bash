@@ -21,30 +21,30 @@ The todo sub-directory view would appear like this:
 africa/  asia/  europe/
 ```
 
-### 1. Navigate to the lingua-franca/ project directory in your own file system.
-```
+### 1. Navigate to the lingua-franca project directory in your own file system.
+```bash
 $ cd /home/anne/lingua-franca
 ```
 
 ### 2. Print the working directory.
-```
+```bash
 $ pwd
 /home/anne/lingua-franca
 ```
 
 ### 3. List the content of the current working directory.
-```
+```bash
 $ ls
 africa/  asia/  europe/  northamerica/  southamerica/  spanish.txt  todo/
 ```
 
 ### 4. Make a new directory called world in the current directory.
-```
+```bash
 $ mkdir world
 ```
 
 ### 5. Create a new file, esperanto.txt in the world directory and list the content of the world directory.
-```
+```bash
 $ touch world/esperanto.txt
 $ ls world
 esperanto.txt
@@ -60,7 +60,7 @@ esperanto.txt
 
 Which directory would appear first?   
 The last file/directory touched was world, so it appears first.
-```
+```bash
 $ ls -alt
 total 12
 drwxr-xr-x 1 anne 197609 0 Jun 11 13:58 world/
@@ -76,7 +76,7 @@ drwxr-xr-x 1 anne 197609 0 Jun 11 13:24 africa/
 ```
 
 ### 7. List the content of the europe directory. Notice that a file, chinese.txt doesn't belong there. Move that file to the correct directory, asia.
-```
+```bash
 $ ls europe
 chinese.txt  english.txt  french.txt  german.txt  italian.txt  portuguese.txt  russian.txt
 $ mv europe/chinese.txt asia
@@ -84,7 +84,7 @@ $ mv europe/chinese.txt asia
 
 ### 8. List the current working directory. Notice that the file spanish.txt needs to be categorized somewhere. 
 Copy it to the following directories: europe, northamerica, and southamerica. Then remove it from the current directory.
-```
+```bash
 $ ls
 africa/  asia/  europe/  northamerica/  southamerica/  spanish.txt  todo/  world/
 $ cp spanish.txt europe/
@@ -95,7 +95,7 @@ $ rm spanish.txt
 Notice that you can copy multiple files into a single directory, but you cannot copy a single file to multiple directories.
 
 ### 9. A directory called todo contains subdirectories of continents with language files in them. List the contents of the directory.
-```
+```bash
 $ ls todo/*
 todo/africa:
 afrihili.txt
@@ -108,24 +108,24 @@ yiddish.txt
 ```
 
 ### 10. Copy these files to their appropriate locations under the current top-level directory.
-```
+```bash
 $ cp todo/africa/* africa/
 $ cp todo/asia/* asia
 $ cp todo/europe/* europe/
 ```
 
-### 11. Then remove all the files and directories of todo/ excluding the todo directory in one step.
-```
+### 11. Then remove all the files and directories of todo excluding the todo directory in one step.
+```bash
 $ rm -r todo/*
 ```
 
 ## Redirecting Input and Output
 
-### 12. List all the files in the asia/ directory and save it in a file, asian_language_files.txt in the todo/ directory.
-```
+### 12. List all the files in the asia directory and save it in a file, asian_language_files.txt in the todo directory.
+```bash
 $ ls asia > todo/asian_languages_files.txt
 ```
-```
+```bash
 $ cat todo/asian_languages_files.txt
 arabic.txt
 bengali.txt
@@ -139,22 +139,22 @@ punjabi.txt
 ```
 
 ### 13. Instead of writing the contents of a file with a file editor, echo the statement "Welkom by die Lingua Franca vertaaldienste." into the file afrikaans.txt in the africa directory.
-```
+```bash
 $ echo "Welkom by die Lingua Franca vertaaldienste." > africa/afrikaans.txt
 ```
-```
+```bash
 $ cat africa/afrikaans.txt
 Welkom by die Lingua Franca vertaaldienste.
 ```
 
-### 14. Some of the files in our project which end with the suffix, .txt, have no content in them. List the files, across all the continent directories, that end with .txt that have no content and save the listing in a file, empty_files.txt, in the todo/ directory.
+### 14. Some of the files in our project which end with the suffix, .txt, have no content in them. List the files, across all the continent directories, that end with .txt that have no content and save the listing in a file, empty_files.txt, in the todo directory.
 When a file as no content the word count is zero. So let's count the words in all .txt files in the immediate subdirectories and pipe the output to grep, which in turn filters lines containing the character 0 and writes them to the file emptyfile.txt.
-```
+```bash
  wc -w */*.txt | grep 0 > todo/emptyfile.txts 
 ```
 
-### 15. Display the content of todo/empty_files.txt to list all the empty files across all the continent directories.
-```
+### 15. Display the content of empty_files.txt (in todo) to list all the empty files across all the continent directories.
+```bash
 $ cat todo/emptyfile.txt
   0 africa/afrihili.txt
   0 asia/bengali.txt
@@ -177,7 +177,7 @@ $ cat todo/emptyfile.txt
 
 ### 16. The name of our translation service is Lingua Franca, however some of the files mistakenly spell it as Lingua-Franca. Replace the string 'Lingua-Franca' with 'Lingua Franca' in all occurrences in all the .txt files.
 First check how many occurences there are of Lingua-Franca across all text files:
-```
+```bash
 $ grep -l 'Lingua-Franca' */*.txt | wc -l
 6
 $ grep -l 'Lingua-Franca' */*.txt
@@ -192,44 +192,44 @@ Using the option `-l` prints the name of the file containing at least one match.
 We could also use `grep -Rl --include="*.txt" 'Lingua-Franca' .` where the option `-R` recursively searches through all directories and subfolders.
 
 Now let's replace Lingua-Franca with Lingua Franca, using the `-i` option to edit the file directly and the `-g` option to replace every instance.
-```
+```bash
 $ sed -i 's/Lingua-Franca/Lingua Franca/g' */*.txt
 ```
 Let's confirm that all instances of Lingua-Franca have been replaced.
-```
+```bash
 $ grep -Rl 'Lingua-Franca' */*.txt | wc -l
 0
 ```
 
 ## Task Group 4: Configuring the Environment
 ### 17. Create and open the bash profile with your favorite editor.
-```
+```bash
 $ nano ~/.bash_profile
 ```
 
 ### 18. In the bash profile, add a greeting of your choice.
-```
+```bash
 echo "Hello and Welcome to Lingua Franca"
 ```
 <kbd>Ctrl + O</kbd> to save, <kbd>enter</kbd> to confirm, <kbd>Ctrl + X</kbd> to exit and `clear` the terminal window.
 
 ### 19. Make the greeting available in the current session.
 Source the bash profile.
-```
+```bash
 $ source ~/.bash_profile
 Hello and Welcome to Lingua Franca
 ```
 
 ### 20. Create Aliases
 Open the bash profile:
-```
+```bash
 nano ~/.bash_profile
 ```
 and create three aliases:
 - md for the mkdir command
 - d for date
 - hy for history
-```
+```bash
 alias md='mkdir'
 alias d='date'
 alias hy='history'
@@ -238,14 +238,14 @@ alias hy='history'
 
 
 ### 21. Source the bash profile to make the aliases available in the current session.
-```
+```bash
 source ~/.bash_profile
 Hello and Welcome to Lingua Franca
 ```
 
 ### 22. Test out the aliases you created for the mkdir, date, and history commands. 
 Create the directory translations/ and list the content.
-```
+```bash
 $ md translations
 $ ls
 africa/  asia/  europe/  northamerica/  southamerica/  todo/  translations/  world/
@@ -260,12 +260,12 @@ $ hy
 
 ### 23. Change the command line promt
 Open the bash profile.  
-```
+```bash
 nano ~/.bash_profile
 ```
 Create and export the PS1 environment variable, setting it equal to a prompt of your choice.
 Remember to leave a space after your prompt.
-```
+```bash
 export PS1="Lingua Franca >> "
 ```
 <kbd>Ctrl + O</kbd> to save, <kbd>enter</kbd> to confirm, <kbd>Ctrl + X</kbd> to exit and `clear` the terminal window.
@@ -273,14 +273,14 @@ export PS1="Lingua Franca >> "
 
 ### 24. Make the new prompt available in the current session.
 Source the bash profile.
-```
+```bash
 # source ~/.bash_profile
 Lingua Franca >> 
 ```
 
 ### 25.  Test out the prompt by typing the names of the aliases you created. 
 Remember to list the directory created from the mkdir alias.
-```
+```bash
 $ md oceania
 $ ls
 africa/  asia/  europe/  northamerica/  oceania/  southamerica/  todo/  translations/  world/
@@ -301,7 +301,7 @@ $ hy
 ```
 
 ### 26. Return a list of environment variables
-```
+```bash
 Lingua Franca >> env
 LANG=da_DK.UTF-8
 TZ=Europe/Copenhagen

@@ -2,13 +2,13 @@
 Attica, a clothing store, has asked you to help them configure their environment.
 
 ### 1. Print the working directory.
-```
+```bash
 $ pwd
 /home/ccuser/workspace/clothing
 ```
 
 ### 2. Create and open a file in nano called hello.txt.
-```
+```bash
 $ nano hello.txt
 ```
 
@@ -22,36 +22,36 @@ Remember to do the following:
 <kbd>Ctrl</kbd> + <kbd>x</kbd> to exit nano  
 
 and clear the terminal.
-```
+```bash
 $ clear
 ```
 
 ### 4. Use nano to open the bash profile.
-```
+```bash
 $ nano ~/.bash_profile
 ```
 
 ### 5. In the bash profile, add a greeting with the word “Hello”
-```
+```bash
 $ nano ~/.bash_profile
 ```
-```
+```bash
 echo "Hello Sunshine!"
 ```
 Remember to save file, exit nano and clear the terminal.
 
 ### 6. Make the greeting available in the current session.
 You should see the greeting you created.
-```
+```bash
 $ source ~/.bash_profile
 Hello Sunshine!
 ```
 
 ### 7. Create two aliases. The first alias should be p for the pwd command and ll for the ls -la command.
-```
+```bash
 $ nano ~/.bash_profile
 ```
-```
+```bash
 echo "Hello Sunshine!"
 alias p="pwd"
 alias ll="ls -la"
@@ -59,13 +59,13 @@ alias ll="ls -la"
 Remember to save file, exit nano and clear the terminal.
 
 ### 8. Make the aliases available in the current session.
-```
+```bash
 $ source ~/.bash_profile
 Hello Sunshine!
 ```
 
 ### 9. Test out the aliases you created for the pwd and ls -la command.
-```
+```bash
 $ p
 /home/ccuser/workspace/clothing
 $ ll
@@ -83,10 +83,10 @@ drwxr-xr-x 1 ccuser ccuser  22 Jun 14 22:16 ..
 ```
 
 ### 10. Create and export the USER environment variable, setting it equal to your name.
-```
+```bash
 $ nano ~/.bash_profile
 ```
-```
+```bash
 echo "Hello Sunshine!"
 alias p="pwd"
 alias ll="ls -la"
@@ -94,22 +94,22 @@ export USER="Me Myself and I"
 ```
 Remember to save file, exit nano and clear the terminal.
 ### 11. Make the aliases available in the current session.
-```
+```bash
 $ source ~/.bash_profile
 Hello Sunshine!
 ```
 
 ### 12. Echo the USER variable.
-```
+```bash
 $ echo $USER
 Me Myself and I
 ```
 
 ### 13. Change the PS1 environment variable, setting it equal to ">> ".
-```
+```bash
 $ nano ~/.bash_profile
 ```
-```
+```bash
 echo "Hello Sunshine!"
 alias p="pwd"
 alias ll="ls -la"
@@ -119,14 +119,14 @@ export PS1=">> "
 Remember to save file, exit nano and clear the terminal.
 
 ### 14. Make the prompt available in the current session.
-```
+```bash
 $ source ~/.bash_profile
 Hello Sunshine!
 >> 
 ```
 
 ### 15. Test out the prompt by typing the two aliases you created earlier.
-```
+```bash
 >> p
 /home/ccuser/workspace/clothing
 >> ll
@@ -144,19 +144,19 @@ drwxr-xr-x 1 ccuser ccuser  22 Jun 11 10:42 ..
 ```
 
 ### 16. Echo the HOME variable.
-```
+```bash
 >> echo $HOME
 /home/ccuser
 ```
 
 ### 17. Echo the PATH variable.
-```
+```bash
 >> echo $PATH
 /home/ccuser/.bin:/home/ccuser/node_modules/.bin:/home/ccuser/.gem/ruby/2.3.0/bin:/home/ccuser/.composer/vendor/bin:/home/ccuser/.bin:/home/ccuser/node_modules/.bin:/home/ccuser/.gem/ruby/2.3.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ```
 
 ### 18. Return a list of environment variables.
-```
+```bash
 >> env
 HOSTNAME=3fce011f59b0
 GEM_HOME=/home/ccuser/.gem/ruby/2.3.0

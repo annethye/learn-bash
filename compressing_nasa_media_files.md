@@ -14,7 +14,7 @@ To complete this project, you will be:
 Before we get started, make sure you are in your Linux environment, whether you are in a VirtualBox or access Linux natively. Open up the Terminal app.
 
 We need to install a utility called iftop to your command line, which allows us to monitor our network. 
-```
+```bash
 sudo apt -y install iftop
 ```
 We will use iftop to observe the download progress and ensure we are correctly able to download the zip archive. 
@@ -22,22 +22,22 @@ We will use iftop to observe the download progress and ensure we are correctly a
 ## Project Instructions
 ### Downloading the Files and Monitoring Network
 Open two terminal windows and stack them side by side. Open the first terminal window and use the command below to open a second terminal.
-```
+```bash
 gnome-terminal
 ```
 
 In one of the terminal windows run the following command and leave the window open until you finish downloading the archive file in the other terminal window.
-```
+```bash
 sudo iftop
 ```
 
 In the other terminal, change the terminal working directory to Desktop.
-```
+```bash
 $ cd /home/anne/Desktop
 ```
 
 Check whether the server that hosts the media.zip file is reachable since Neil warned you that it might not be. Send 5 packets to `static-assets.codecademy.com` using the `ping` command with the `-c` count option.
-```
+```bash
 $ ping -c 5 static-assets.codecademy.com
 PING static-assets.codecademy.com (104.17.183.120) 56(84) bytes of data.
 64 bytes from 104.17.183.120 (104.17.183.120): icmp_seq=1 ttl=255 time=110 ms
@@ -55,7 +55,7 @@ You will notice network traffic with bandwidth usage being printed out in the te
 
 Use the `wget` or `curl` command to download media.zip from the url `https://static-assets.codecademy.com/Courses/learn-linux/nasa-media-off-platform-project/media.zip`. Use option `-0` to save the downloaded file with the original file name.
 
-```
+```bash
 $ curl -O "https://static-assets.codecademy.com/Courses/learn-linux/nasa-media-off-platform-project/media.zip"
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
 
@@ -66,7 +66,7 @@ $ curl -O "https://static-assets.codecademy.com/Courses/learn-linux/nasa-media-o
 While the file is downloading, iftop will show the source address of the file and the bandwidth usage. You may close the iftop terminal when the file is downloaded.
 
 Extract the downloaded archive file to the current Desktop.
-```
+```bash
 $ unzip media.zip
 Archive:  media.zip
    creating: media/
@@ -85,7 +85,7 @@ Archive:  media.zip
 ```
 
 View the files.
-```
+```bash
 $ ls
 media  media.zip
 ```
@@ -95,7 +95,7 @@ In this section, we encourage you to use commands like ls to check the progress 
 
 ### 1. Change directory
 Change the terminal working directory to media. View the files in the extracted media directory and take note of the files and their extensions.
-```
+```bash
 $ cd media
 $ ls
 'Apollo 8 Separation.jpg'    'Saturn Apollo Program Illustration.jpg'
@@ -108,14 +108,14 @@ $ ls
 
 ### 2. Create new directory and move files
 Create a directory called compressed_photos and move all the photos (files with the .jpg extension) to this directory.
-```
+```bash
 $ mkdir compressed_photos
 $ mv *.jpg compressed_photos/
 ```
 
 ### 3. Compress files
 Compress all the files in the compressed_photos directory using the gzip compression command. Option `-r` means recursive.
-```
+```bash
 $ gzip -r compressed_photos/
 ls compressed_photos/
 'Apollo 8 Separation.jpg.gz'  'Saturn Apollo Program Illustration.jpg.gz'
@@ -125,7 +125,7 @@ ls compressed_photos/
 
 ### 4. Create compressed tar archive
 Let's take a look at our directory.
-```
+```bash
 $ ls
  compressed_photos           'Space Shuttle Highlights.mp4'
  credits.txt                 'Tsunami Waves Recorded by Voyager 1.mp3'
@@ -134,13 +134,13 @@ $ ls
 ```
 
 Create a compressed tar archive named videos.tar.bz2 of all the videos (files with .mp4 extension). Be patient. This might take a while. 
-```
+```bash
 $ tar -cjf videos.tar.bz2 *.mp4 --remove-files
 ```
 The option `-c` creates a new archive, `-j` filters the archive through bzip2 compression, `-f` writes output to the file `videos.tar.bz2` and `--remove-files` removes the original files.
 
 Now let's see the result.
-```
+```bash
 $ ls
 compressed_photos  'Tsunami Waves Recorded by Voyager 1.mp3'
 credits.txt         videos.tar.bz2
@@ -148,7 +148,7 @@ credits.txt         videos.tar.bz2
 
 ### 5. Compress the audio file
 Compress the audio file with the .mp3 extension using the xz compression utility.
-```
+```bash
 $ xz *.mp3
 $ ls
  compressed_photos  'Tsunami Waves Recorded by Voyager 1.mp3.xz'
